@@ -6,6 +6,10 @@ Structure de l'objet :
 */
 
 const contact = [];
+
+contact.push({ prenom: "Alice", nom: "Martin", telephone: "0601020304", favori: true })
+contact.push({ prenom: "Roger", nom: "Dumond", telephone: "0670865412", favori: false })
+
 let reponseMenu;
 
 do {
@@ -16,6 +20,8 @@ do {
         2. Afficher les contacts
         3. Rechercher un contact
         4. Quitter
+        5. Supprimer un contact
+        6. Afficher les favoris
     `)
 
     switch(reponseMenu) {
@@ -44,7 +50,7 @@ do {
             let find = false;
 
             for(const person of contact) {
-                if(person.prenom === prenomSaisis) {
+                if(person.prenom.toLowerCase() === prenomSaisis.toLowerCase()) {
                     alert(`${person.prenom} ${person.nom} : ${person.telephone}`);
                     find = true;
                 }
@@ -56,7 +62,37 @@ do {
 
         break;
         case "4":
-            alert(`Au revoir ! Vous avez ${contact.length} contact(s).`)
+            let nbFavori = 0;
+
+            for(people of contact) {
+                if(people.favori) {
+                    nbFavori++;
+                }
+            }
+
+            alert(`Au revoir ! Vous avez ${contact.length} contact(s) et ${nbFavori} favori(s).`)
+        break;
+        case "5":
+            const contactASupprimer = prompt("Saisissez un prénom");
+
+            for(const index in contact) {
+                if(contact[index].prenom.toLowerCase() === contactASupprimer.toLowerCase()) {
+                    contact.splice(Number(index), 1)
+                }
+            }
+        break;
+        case "6":
+            if(contact.length === 0) {
+                alert("Le carnet est vide.");
+            } else {
+                let reponse = "";
+                for(const index in contact) {
+                    if(contact[index].favori) {
+                        reponse = reponse + (Number(index) + 1) + `. ${contact[index].prenom} ${contact[index].nom} - ${contact[index].telephone} \n`;
+                    }
+                }
+                alert(reponse);
+            }
         break;
         default: 
             alert("Choix invalide.");
