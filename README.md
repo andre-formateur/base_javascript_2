@@ -461,8 +461,6 @@ Affichage attendu pour l'action 2 :
 - ⭐ Rendez la recherche **insensible à la casse** (`bob`, `BOB` et `Bob` doivent fonctionner) avec `toLowerCase()`.
 - ⭐⭐ Ajoutez une action **5 : Supprimer un contact** : parcourez le carnet avec une boucle `for` pour retrouver sa position, puis retirez-le avec `splice`.
 - ⭐⭐ Ajoutez une action **6 : Afficher les favoris** : construisez un tableau avec les prénoms des favoris (`push`), puis affichez-le avec `join`.
-- ⭐⭐ Permettez à un contact d'avoir **plusieurs numéros** : la propriété `telephones` devient un **tableau**, et l'utilisateur ajoute des numéros tant qu'il ne laisse pas la saisie vide.
-- ⭐⭐ Gérez le cas où l'utilisateur clique sur **Annuler** : `prompt` renvoie alors `null`.
 
 ---
 
