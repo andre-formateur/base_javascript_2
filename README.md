@@ -156,7 +156,7 @@ Partez de ce tableau :
 const jours = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"];
 ```
 
-1. Affichez l'indice de `"jeudi"`.
+1. Affichez l'index de `"jeudi"`.
 2. Affichez `true` ou `false` selon que `"samedi"` est dans le tableau, puis selon que `"funday"` y est.
 3. Affichez les jours du **week-end** sous forme de tableau.
 4. Affichez les **cinq premiers** jours sous la forme d'une seule chaîne, séparés par ` - `.
@@ -295,7 +295,7 @@ Quand l'âge est valide, affichez `Vous avez 25 ans.` (avec la valeur saisie).
 
 **Tests à faire :** `0`, `150`, `-5`, `abc`, puis `25`.
 
-💡 Écrivez la condition de répétition comme **la négation** de « l'âge est valide » : `!(age >= 1 && age <= 120)`. Ainsi, une saisie qui n'est pas un nombre (comme `abc`) est elle aussi refusée.
+💡 isNaN(age) permet de vérifier que le type de la variable age est bien NaN
 
 ### Exercice 4.3 : La liste d'invités
 
@@ -388,21 +388,13 @@ Partez de ce tableau :
 const original = [1, 2, 3, 4, 5];
 ```
 
-1. Construisez un **nouveau tableau** `inverse` contenant les mêmes éléments dans l'ordre inverse. Le tableau `original` ne doit pas être modifié.
-2. **Rotation à droite de 2 positions** : le dernier élément passe au début, deux fois de suite. Faites-la sur une **copie** (`const copie = original.slice();`).
-3. **Rotation à gauche de 2 positions** : le premier élément passe à la fin, deux fois de suite, sur une nouvelle copie.
+- Construisez un **nouveau tableau** `inverse` contenant les mêmes éléments dans l'ordre inverse. Le tableau `original` ne doit pas être modifié.
 
 **Résultat attendu :**
 
 ```
 [5, 4, 3, 2, 1]
-[4, 5, 1, 2, 3]
-[3, 4, 5, 1, 2]
 ```
-
-💡 Pour la question 1, parcourez `original` avec une boucle `for` **de la fin vers le début**. Pour les rotations, combinez `pop` avec `unshift`, ou `shift` avec `push`, dans une boucle qui répète l'opération deux fois.
-
-**Bonus ⭐ :** affichez `true` si le tableau est un **palindrome** (identique à l'endroit et à l'envers), sinon `false`. Testez avec `[1, 2, 3, 2, 1]` (`true`) et `[1, 2, 3]` (`false`).
 
 ---
 
